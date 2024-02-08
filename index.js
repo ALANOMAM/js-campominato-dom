@@ -76,7 +76,7 @@ for(let i=0; i<num;i++){
 
 // creo una funzione che genera numeri casuali
 
-let num
+let num = 100
 function creatRandom (num){
    let randomNumber = Math.floor(Math.random()*num+1)
 
@@ -90,13 +90,22 @@ function creatRandom (num){
 function getRandom (){
 const randomArray = []
 
-while(randomArray.length<20){
-  const newNumber = creatRandom(20)
+while(randomArray.length<6){
+  const newNumber = creatRandom(num)
   
-  randomArray.push(newNumber)
-}
 
+  //controllo se il numero appena generato è già presente dentro il nostro array
+  if( ! randomArray.includes(newNumber)  ) {
+
+    randomArray.push(newNumber)
+
+}
+   
+}
+console.log(randomArray)
  return randomArray
 }
 
-console.log(getRandom())
+
+ getRandom()
+ //console.log(getRandom())
