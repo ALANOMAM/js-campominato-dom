@@ -75,8 +75,9 @@ for(let i=0; i<num;i++){
 
 // creo una funzione che genera numeri casuali
 
+let num=90
 function creatRandom (){
-   let randomNumber = Math.floor(Math.random()*100+1)
+   let randomNumber = Math.floor(Math.random()*num+1)
    console.log(randomNumber)
 }
 
