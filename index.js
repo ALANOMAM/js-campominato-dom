@@ -12,7 +12,7 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 */
 
 
-/*
+
 let pulsante = document.querySelector("#btn")
 let num 
 
@@ -34,6 +34,7 @@ if(livelli.value == "level1"){
   num=49
 }
    
+const randomNumbersArray = getRandom();
 
 for(let i=0; i<num;i++){
     //creo i vari div   
@@ -54,7 +55,11 @@ for(let i=0; i<num;i++){
 
    
    //aggiungo i numeri dentro le scatole
-   scatole.innerHTML = (i+1)
+   // il procedimento tra parentesi quadre fa in modo tale che i miei 16 numeri si posizionino in posti diversi della pagina ogni volta
+   scatole.innerText = randomNumbersArray[Math.floor(Math.random()*100+1)]
+   
+
+
    
    // aggiungo event listener che mi identifica la box cliccata, fa cambiare backgroud e mi manda un messaggio in console
    scatole.addEventListener("click",function(){
@@ -71,14 +76,14 @@ for(let i=0; i<num;i++){
    
    }
 
-}) */
+}) 
 
 
 // creo una funzione che genera numeri casuali
 
-let num = 100
-function creatRandom (num){
-   let randomNumber = Math.floor(Math.random()*num+1)
+
+function creatRandom (maxNumber){
+   let randomNumber = Math.floor(Math.random()*maxNumber+1)
 
    return randomNumber
 }
@@ -90,8 +95,8 @@ function creatRandom (num){
 function getRandom (){
 const randomArray = []
 
-while(randomArray.length<6){
-  const newNumber = creatRandom(num)
+while(randomArray.length<16){
+  const newNumber = creatRandom(100)
   
 
   //controllo se il numero appena generato è già presente dentro il nostro array
@@ -107,5 +112,5 @@ console.log(randomArray)
 }
 
 
- getRandom()
+ //getRandom()
  //console.log(getRandom())
