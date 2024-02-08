@@ -56,11 +56,11 @@ for(let i=0; i<num;i++){
    
    //NUMERI DENTRO LE SCATOLE
    // -il procedimento tra parentesi quadre fa in modo tale che i miei 16 numeri si posizionino in posti diversi della pagina ogni volta
-     scatole.innerText = randomNumbersArray[Math.floor(Math.random()*num+1)]
+     scatole.innerHTML = randomNumbersArray[Math.floor(Math.random()*num+1)]
    
     // -cosi le scatole vuote non scivono "undifined" dentro ma rimangono vuote
-    if(scatole.innerText === "undefined"){
-      scatole.innerText=""
+    if(scatole.innerHTML === "undefined"){
+      scatole.innerHTML=""
     }
 
    
@@ -69,7 +69,12 @@ for(let i=0; i<num;i++){
    
    console.log("la scatola clisccata è : ",this.innerHTML)
    
-   this.classList.toggle("active")
+   //se ce un numero dentro la box colora di rosso, se non c'è colora di azzuro
+   if(scatole.innerHTML == ""){
+    this.classList.add("alive")
+   }else{
+    this.classList.add("dead")
+   }
    
    })
    

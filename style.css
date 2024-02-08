@@ -73,10 +73,13 @@ flex-wrap: wrap;
 }
 
 
-.active{
+.alive{
     background-color: azure;
     color: black;
 }
 
-
+.dead{
+    background-color: red;
+    color: black;
+}
 
