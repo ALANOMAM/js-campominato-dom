@@ -54,11 +54,14 @@ for(let i=0; i<num;i++){
   }
 
    
-   //aggiungo i numeri dentro le scatole
-   // il procedimento tra parentesi quadre fa in modo tale che i miei 16 numeri si posizionino in posti diversi della pagina ogni volta
-   scatole.innerText = randomNumbersArray[Math.floor(Math.random()*100+1)]
+   //NUMERI DENTRO LE SCATOLE
+   // -il procedimento tra parentesi quadre fa in modo tale che i miei 16 numeri si posizionino in posti diversi della pagina ogni volta
+     scatole.innerText = randomNumbersArray[Math.floor(Math.random()*100+1)]
    
-
+    // -cosi le scatole vuote non scivono "undifined" dentro ma rimangono vuote
+    if(scatole.innerText === "undefined"){
+      scatole.innerText=""
+    }
 
    
    // aggiungo event listener che mi identifica la box cliccata, fa cambiare backgroud e mi manda un messaggio in console
