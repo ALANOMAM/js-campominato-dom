@@ -12,6 +12,7 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 */
 
 
+/*
 let pulsante = document.querySelector("#btn")
 let num 
 
@@ -70,4 +71,13 @@ for(let i=0; i<num;i++){
    
    }
 
-})
+}) */
+
+// creo una funzione che genera numeri casuali
+
+function creatRandom (){
+   let randomNumber = Math.floor(Math.random()*100+1)
+   console.log(randomNumber)
+}
+
+creatRandom()
