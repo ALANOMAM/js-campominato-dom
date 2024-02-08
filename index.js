@@ -73,12 +73,30 @@ for(let i=0; i<num;i++){
 
 }) */
 
+
 // creo una funzione che genera numeri casuali
 
-let num=90
-function creatRandom (){
+let num
+function creatRandom (num){
    let randomNumber = Math.floor(Math.random()*num+1)
-   console.log(randomNumber)
+
+   return randomNumber
 }
 
-creatRandom()
+
+
+// creo una funzione che raccoglie i miei elementi random e li mette dentro in array
+
+function getRandom (){
+const randomArray = []
+
+while(randomArray.length<20){
+  const newNumber = creatRandom(20)
+  
+  randomArray.push(newNumber)
+}
+
+ return randomArray
+}
+
+console.log(getRandom())
