@@ -56,7 +56,7 @@ for(let i=0; i<num;i++){
    
    //NUMERI DENTRO LE SCATOLE
    // -il procedimento tra parentesi quadre fa in modo tale che i miei 16 numeri si posizionino in posti diversi della pagina ogni volta
-     scatole.innerText = randomNumbersArray[Math.floor(Math.random()*100+1)]
+     scatole.innerText = randomNumbersArray[Math.floor(Math.random()*num+1)]
    
     // -cosi le scatole vuote non scivono "undifined" dentro ma rimangono vuote
     if(scatole.innerText === "undefined"){
@@ -99,7 +99,7 @@ function getRandom (){
 const randomArray = []
 
 while(randomArray.length<16){
-  const newNumber = creatRandom(100)
+  const newNumber = creatRandom(num)
   
 
   //controllo se il numero appena generato è già presente dentro il nostro array
