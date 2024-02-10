@@ -41,6 +41,8 @@ if(livelli.value == "level1"){
    
 const randomNumbersArray = getRandom(16,num);
 
+
+
 for(let i=0; i< num;i++){
     //creo i vari div   
    let scatole = document.createElement("div")
@@ -63,14 +65,7 @@ for(let i=0; i< num;i++){
  scatole.innerHTML = i+1 
 console.log(scatole.innerHTML)
 
-    // -cosi le scatole vuote non scivono "undifined" dentro ma rimangono vuote
-    /* if(scatole.innerHTML === "undefined"){
-      scatole.innerHTML=" "
-    }*/
 
-
-
-   
    // aggiungo event listener che mi identifica la box cliccata, fa cambiare backgroud e mi manda un messaggio in console
    scatole.addEventListener("click",function(){
    
@@ -79,18 +74,17 @@ console.log(scatole.innerHTML)
 
   
    
-   //se ce un numero dentro la box colora di rosso, se non c'è colora di azzuro
-   if(scatole.innerHTML == " "){
-    this.classList.add("alive")
-   }else{
+   //se il numero cliccato corrisponde ad un numero presente in array lo colora di rosso, altrimenti lo colora di azzuro
+   if( randomNumbersArray.includes(Number(scatole.innerHTML)) ){
     this.classList.add("dead")
-    prompt("hai perso")
+   }else{
+    this.classList.add("alive")
    }
    
-
+   /*
    if(numeroDiClicchi.length === (num-16)){
-    prompt("hai vinto")
-   }
+     prompt("hai vinto")
+   } */
 
 
 
