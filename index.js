@@ -21,9 +21,6 @@ let risultato = document.querySelector(".result")
 pulsante.addEventListener("click", function(){
 
   
-
- 
-  
     let griglia = document.querySelector("#grid")
     let livelli = document.querySelector("#levels")
    
@@ -64,7 +61,7 @@ for(let i=0; i< num;i++){
    
    //Iinserimento numeri in ogni box della mia griglie
  scatole.innerHTML = i+1 
-console.log(scatole.innerHTML)
+//console.log(scatole.innerHTML)
 
 
 
@@ -72,7 +69,7 @@ console.log(scatole.innerHTML)
    scatole.addEventListener("click",function(){
    
    numeroDiClicchi.push(`la scatola clisccata è : ${Number(this.innerHTML)}`)
-   console.log(numeroDiClicchi)
+    //console.log(numeroDiClicchi)
 
   
    
@@ -87,7 +84,7 @@ console.log(scatole.innerHTML)
     this.classList.add("alive")
    }
    
-   
+  // la condizione di vittoria, ovvero quando quando clicco tutte le caselle che non sono bombe
    if(numeroDiClicchi.length === (num-16)){
     risultato.innerHTML = "Hai vinto"
     risultato.classList.add("win")
@@ -133,10 +130,7 @@ while(randomArray.length < quantity/*16*/){
 }
    
 }
-console.log(randomArray)
+ console.log(randomArray)
  return randomArray
 }
 
-
- //getRandom()
- //console.log(getRandom()) 

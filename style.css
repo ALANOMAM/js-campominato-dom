@@ -10,6 +10,7 @@ body{
     font-family: sans-serif;
 }
 
+/* intro start*/
 .intro{
     padding: 20px;
     display: flex;
@@ -33,7 +34,9 @@ body{
     color: whitesmoke;
 }
 
+/* intro end*/
 
+/* grid start*/
 .container{
     max-width: 1000px;
     margin-top: 100px;
@@ -83,6 +86,9 @@ flex-wrap: wrap;
     color: black;
 }
 
+/* grid end*/
+
+/* result start*/
 .result{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -103,3 +109,4 @@ background-color: red;
   background-color: green;
   color: white;
 }
+/*result end*/
