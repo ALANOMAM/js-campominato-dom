@@ -15,9 +15,14 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 let pulsante = document.querySelector("#btn")
 let num 
+let numeroDiClicchi =[]
 
 pulsante.addEventListener("click", function(){
 
+  
+
+ 
+  
     let griglia = document.querySelector("#grid")
     let livelli = document.querySelector("#levels")
    
@@ -34,9 +39,9 @@ if(livelli.value == "level1"){
   num=49
 }
    
-const randomNumbersArray = getRandom();
+const randomNumbersArray = getRandom(16,num);
 
-for(let i=0; i<num;i++){
+for(let i=0; i< num;i++){
     //creo i vari div   
    let scatole = document.createElement("div")
   
@@ -54,28 +59,41 @@ for(let i=0; i<num;i++){
   }
 
    
-   //NUMERI DENTRO LE SCATOLE
-   // -il procedimento tra parentesi quadre fa in modo tale che i miei 16 numeri si posizionino in posti diversi della pagina ogni volta
-     scatole.innerHTML = randomNumbersArray[Math.floor(Math.random()*num+1)]
-   
+   //Iinserimento numeri in ogni box della mia griglie
+ scatole.innerHTML = i+1 
+console.log(scatole.innerHTML)
+
     // -cosi le scatole vuote non scivono "undifined" dentro ma rimangono vuote
-    if(scatole.innerHTML === "undefined"){
-      scatole.innerHTML=""
-    }
+    /* if(scatole.innerHTML === "undefined"){
+      scatole.innerHTML=" "
+    }*/
+
+
 
    
    // aggiungo event listener che mi identifica la box cliccata, fa cambiare backgroud e mi manda un messaggio in console
    scatole.addEventListener("click",function(){
    
-   console.log("la scatola clisccata è : ",this.innerHTML)
+   numeroDiClicchi.push(`la scatola clisccata è : ${Number(this.innerHTML)}`)
+   console.log(numeroDiClicchi)
+
+  
    
    //se ce un numero dentro la box colora di rosso, se non c'è colora di azzuro
-   if(scatole.innerHTML == ""){
+   if(scatole.innerHTML == " "){
     this.classList.add("alive")
    }else{
     this.classList.add("dead")
+    prompt("hai perso")
    }
    
+
+   if(numeroDiClicchi.length === (num-16)){
+    prompt("hai vinto")
+   }
+
+
+
    })
    
    
@@ -84,12 +102,12 @@ for(let i=0; i<num;i++){
    
    }
 
-}) 
+ 
+  }) 
+
 
 
 // creo una funzione che genera numeri casuali
-
-
 function creatRandom (maxNumber){
    let randomNumber = Math.floor(Math.random()*maxNumber+1)
 
@@ -99,11 +117,10 @@ function creatRandom (maxNumber){
 
 
 // creo una funzione che raccoglie i miei elementi random e li mette dentro in array
-
-function getRandom (){
+function getRandom (quantity, num){
 const randomArray = []
 
-while(randomArray.length<16){
+while(randomArray.length < quantity/*16*/){
   const newNumber = creatRandom(num)
   
 
@@ -121,4 +138,4 @@ console.log(randomArray)
 
 
  //getRandom()
- //console.log(getRandom())
+ //console.log(getRandom()) 
