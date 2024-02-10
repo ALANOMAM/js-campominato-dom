@@ -16,6 +16,7 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 let pulsante = document.querySelector("#btn")
 let num 
 let numeroDiClicchi =[]
+let risultato = document.querySelector(".result")
 
 pulsante.addEventListener("click", function(){
 
@@ -66,6 +67,7 @@ for(let i=0; i< num;i++){
 console.log(scatole.innerHTML)
 
 
+
    // aggiungo event listener che mi identifica la box cliccata, fa cambiare backgroud e mi manda un messaggio in console
    scatole.addEventListener("click",function(){
    
@@ -75,16 +77,21 @@ console.log(scatole.innerHTML)
   
    
    //se il numero cliccato corrisponde ad un numero presente in array lo colora di rosso, altrimenti lo colora di azzuro
+   
    if( randomNumbersArray.includes(Number(scatole.innerHTML)) ){
     this.classList.add("dead")
+    risultato.innerHTML = "Hai perso"
+    risultato.classList.add("loose")
+    
    }else{
     this.classList.add("alive")
    }
    
-   /*
+   
    if(numeroDiClicchi.length === (num-16)){
-     prompt("hai vinto")
-   } */
+    risultato.innerHTML = "Hai vinto"
+    risultato.classList.add("win")
+   } 
 
 
 
